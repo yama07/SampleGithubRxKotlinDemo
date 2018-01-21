@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/base_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -12,7 +13,7 @@
         android:id="@+id/find_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter User Name"
+        android:hint="@string/enter_user_name"
         android:textSize="20sp" />
 
     <LinearLayout
@@ -20,9 +21,9 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/linearLayout"
         android:layout_below="@+id/find_edit_text"
+        android:orientation="vertical"
         android:paddingBottom="20dp"
-        android:paddingTop="10dp"
-        android:orientation="vertical">
+        android:paddingTop="10dp">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view"
@@ -47,7 +48,7 @@
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:background="#008B75"
-            android:text="Clear"
+            android:text="@string/clear"
             android:textColor="#ffffff" />
 
         <Button
@@ -57,7 +58,7 @@
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:background="#008B75"
-            android:text="Find"
+            android:text="@string/find"
             android:textColor="#ffffff" />
 
     </LinearLayout>

@@ -1,4 +1,4 @@
-package jp.yama07.samplegithubrxotlindemo.util
+package jp.yama07.samplegithubrxkotlindemo.util
 
 import android.app.Activity
 

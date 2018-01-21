@@ -1,6 +1,19 @@
 <resources>
     <string name="app_name">GithubDemo</string>
 
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="clear">Clear</string>
+    <string name="find">Find</string>
+    <string name="enter_user_name">Enter User Name</string>
+
+    <string-array name="default_github_logins">
+        <item>linkedin</item>
+        <item>tumblr</item>
+        <item>square</item>
+        <item>google</item>
+        <item>stripe</item>
+        <item>angular</item>
+        <item>facebook</item>
+        <item>rails</item>
+    </string-array>
 </resources>

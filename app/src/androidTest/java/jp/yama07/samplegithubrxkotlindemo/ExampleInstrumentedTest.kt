@@ -1,4 +1,4 @@
-package jp.yama07.samplegithubrxotlindemo
+package jp.yama07.samplegithubrxkotlindemo
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

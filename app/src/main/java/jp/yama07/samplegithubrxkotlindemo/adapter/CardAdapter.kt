@@ -1,12 +1,12 @@
-package jp.yama07.samplegithubrxotlindemo.adapter
+package jp.yama07.samplegithubrxkotlindemo.adapter
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import jp.yama07.samplegithubrxotlindemo.R
-import jp.yama07.samplegithubrxotlindemo.model.Github
+import jp.yama07.samplegithubrxkotlindemo.R
+import jp.yama07.samplegithubrxkotlindemo.model.Github
 
 import kotlinx.android.synthetic.main.recycler_view.view.*
 
