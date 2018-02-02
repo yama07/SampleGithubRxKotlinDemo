@@ -6,7 +6,7 @@
     <string name="find">Find</string>
     <string name="enter_user_name">Enter User Name</string>
 
-    <string-array name="default_github_logins">
+    <string-array name="default_github_usernames">
         <item>linkedin</item>
         <item>tumblr</item>
         <item>square</item>

@@ -7,7 +7,7 @@ import android.app.Activity
  */
 
 class ScreenSize(private val activity: Activity) {
-    fun getScreenHeight(decrease: Float = 1f): Int{
+    fun getScreenHeight(decrease: Float = 1f): Int {
         var displayMetrics = activity.resources.displayMetrics
         return Math.round(displayMetrics.heightPixels / displayMetrics.density / decrease)
     }

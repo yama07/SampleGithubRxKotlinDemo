@@ -11,10 +11,10 @@ import jp.yama07.samplegithubrxkotlindemo.model.Github
 import kotlinx.android.synthetic.main.recycler_view.view.*
 
 class CardAdapter : RecyclerView.Adapter<CardAdapter.ViewHolder>() {
-    private val mItems = mutableListOf<Github>()
+    private val mItems = mutableListOf<Github.Users>()
 
-    fun addData(github: Github) {
-        mItems.add(github)
+    fun addData(githubUsers: Github.Users) {
+        mItems.add(githubUsers)
         notifyDataSetChanged()
     }
 
@@ -30,8 +30,8 @@ class CardAdapter : RecyclerView.Adapter<CardAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, i: Int) {
-        val (login, blog, publicRepos) = mItems[i]
-        viewHolder.login.text = login
+        val (username, blog, publicRepos) = mItems[i]
+        viewHolder.username.text = username
         viewHolder.repos.text = "repos: $publicRepos"
         viewHolder.blog.text = "blog: $blog"
     }
@@ -39,7 +39,7 @@ class CardAdapter : RecyclerView.Adapter<CardAdapter.ViewHolder>() {
     override fun getItemCount(): Int = mItems.size
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var login: TextView = itemView.login
+        var username: TextView = itemView.username
         var repos: TextView = itemView.repos
         var blog: TextView = itemView.blog
     }
