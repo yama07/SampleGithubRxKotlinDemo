@@ -10,7 +10,8 @@ import android.view.ViewGroup
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import jp.yama07.samplegithubrxkotlindemo.R
-import jp.yama07.samplegithubrxkotlindemo.adapter.CardAdapter
+import jp.yama07.samplegithubrxkotlindemo.adapter.UserCardAdapter
+import jp.yama07.samplegithubrxkotlindemo.model.Github
 import jp.yama07.samplegithubrxkotlindemo.service.GithubService
 import jp.yama07.samplegithubrxkotlindemo.service.ServiceFactory
 import kotlinx.android.synthetic.main.find_users.*
@@ -18,10 +19,10 @@ import timber.log.Timber
 
 public class FindUsersFragment : Fragment() {
     private lateinit var service: GithubService
-    private lateinit var mCardAdapter: CardAdapter
+    private val mUserCardAdapter = UserCardAdapter()
 
     companion object {
-        fun newInstance(): FindUsersFragment{
+        fun newInstance(): FindUsersFragment {
             return FindUsersFragment()
         }
     }
@@ -38,17 +39,21 @@ public class FindUsersFragment : Fragment() {
                 GithubService::class.java, GithubService.SERVICE_ENDPOINT
         )
 
-        mCardAdapter = CardAdapter()
+        mUserCardAdapter.onItemClickListener = object : UserCardAdapter.OnItemClickListener {
+            override fun onItemClick(user: Github.User) {
+                Timber.d("${user.login}")
+            }
+        }
 
         recycler_view.apply {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(activity)
-            adapter = mCardAdapter
+            adapter = mUserCardAdapter
         }
 
-        button_clear.setOnClickListener { mCardAdapter.clear() }
+        button_clear.setOnClickListener { mUserCardAdapter.clear() }
         button_fetch.setOnClickListener {
-            mCardAdapter.clear()
+            mUserCardAdapter.clear()
             fetchAndUpdate(find_edit_text.text.toString())
         }
 
@@ -66,7 +71,7 @@ public class FindUsersFragment : Fragment() {
                 .cache()
                 .subscribe({ response ->
                     Timber.d("Response: ${response.login}")
-                    mCardAdapter.addData(response)
+                    mUserCardAdapter.addData(response)
                 }, { ex ->
                     Timber.e(ex)
                     Snackbar.make(base_layout, "An error occurred: ${ex.message}", Snackbar.LENGTH_LONG)

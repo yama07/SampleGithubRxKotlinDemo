@@ -1,6 +1,5 @@
 package jp.yama07.samplegithubrxkotlindemo.activity
 
-import android.app.Fragment
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import jp.yama07.samplegithubrxkotlindemo.R
@@ -12,14 +11,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-       if(savedInstanceState == null){
+        if (savedInstanceState == null) {
             supportFragmentManager
                     .beginTransaction()
                     .add(R.id.contents, FindUsersFragment())
                     .commit()
         }
     }
-
 
 
 }

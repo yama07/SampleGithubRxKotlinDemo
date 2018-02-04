@@ -1,7 +1,7 @@
 package jp.yama07.samplegithubrxkotlindemo.model
 
 class Github {
-    data class Users(
+    data class User(
             var login: String,
             var blog: String,
             var public_repos: Int
